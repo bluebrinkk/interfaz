@@ -1,0 +1,147 @@
+
+*{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+body{
+
+}
+
+header{
+	background: black;
+	height:120px;
+	width: 1000px;
+	margin:20px auto;
+	position: relative;
+}
+
+#logo{
+	font-family: 'Pacifico', cursive;
+	background: #ccc;
+	height: 80px;
+	width: 200px;
+	position: absolute;
+	top: 20px;
+	left:20px;
+	font-size: 45px;
+	text-align: center;
+	line-height: 75px;
+}
+
+.redes{
+	background: #ff0000;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	border-radius: 100%;
+}
+
+#icono1{
+	top:35px;
+	right: 150px;
+}
+
+#icono2{
+	top:35px;
+	right: 90px;
+}
+
+#icono3{
+	top:35px;
+	right: 30px;
+}
+nav{
+	position: relative;
+  
+    height: 48px;
+    width: 1000px;
+    margin:auto;
+
+}
+
+.boton{
+    float: left;
+    background: #A9A83D;
+    width: 196px;
+    height: 48px;
+    margin:0px 2px;
+    /*border:solid 1px black;*/
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.boton:hover{
+    background: #CE9149;
+
+}
+
+#noticias{
+	position: relative;
+  
+     width: 1000px;
+     height: 192px;
+     margin:20px auto;
+
+}
+#noticias ul{
+	 height: 192px;
+	 width: 1010px;
+
+}
+
+#noticias ul li{
+    width: 326px;
+    height: 192px;
+    background: #5D9ACB;
+    float: left;
+    margin-right: 10px;
+
+}
+section{
+	 position: relative;
+     background: #888;
+     width: 1000px;
+     height: 450px;
+     margin:auto;
+      box-shadow:0px 5px 5px 0px #333;
+}
+
+aside#izq{
+     background: #F5B30D;
+     height: 450px;
+     width: 200px;
+     position: absolute;
+     left: 0;
+     top:0;
+
+}
+
+aside#der{
+     background: #F5B30D;
+     height: 450px;
+     width: 200px;
+     position: absolute;
+     right: 0;
+     top:0;
+}
+
+article{
+	background: #F3EEE2;
+	height: 450px;
+	width: 600px;
+	position: absolute;
+	left: 200px;
+}
+
+
+footer{
+	position: relative;
+	background: #222;
+	width: 1000px;
+	height: 150px;
+	margin:auto;
+	margin-top: 20px;
+}

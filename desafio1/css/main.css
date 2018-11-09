@@ -1,0 +1,8 @@
+input{
+    text-transform: uppercase;
+}
+
+.result{
+    display: inline-block;
+    font-weight: bold;
+}

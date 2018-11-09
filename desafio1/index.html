@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.Rut.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/global.js"></script>
+        <script src="js/main.js"></script>
+        <title>Desafio</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="card bg-light col-md-offset-5 mb-3" style="margin: 0 auto;width: 900px;">
+                    <div class="card-header">Desafio</div>
+                    <div class="card-body">
+                        <form name="deasfio">
+                            <h5 class="card-title">Ingrese valores a calcular</h5>
+                            <div class="alert alert-danger" style="display: none" id="danger"></div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="producto">Nombre Producto</label>
+                                    <input type="text" class="form-control" id="producto" onkeypress="return alfanumericoSpace(event)">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input type="text" class="form-control text-center" maxlength="4" onkeypress="return soloNumeros(event)" id="cantidad">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="precio">Precio Unidad</label>
+                                    <input type="text" class="form-control text-center" maxlength="11" onkeypress="return soloNumeros(event)" id="precio">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="descuento">Descuento %</label>
+                                    <input type="text" class="form-control text-center" placeholder="%" maxlength="2" onkeypress="return soloNumeros(event)" id="descuento">
+                                </div>
+                            </div>                            
+                            
+                        </form>
+                    </div>                    
+                </div> 
+            </div>
+        </div>
+
+    </body>
+
+</html>

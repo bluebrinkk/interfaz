@@ -1,0 +1,12 @@
+.verde{
+    min-height: 100px;
+    background: greenyellow;
+}
+.amarillo{
+    min-height: 100px;
+    background: yellow;
+}
+.rojo{
+    min-height: 100px;
+    background: red;
+}

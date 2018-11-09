@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.Rut.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/global.js"></script>
+        <script src="js/main.js"></script>
+        <title>Trabajo</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="card bg-light col-md-offset-5 mb-3" style="margin: 0 auto;width: 900px;" id="calculoIva">
+                    <div class="card-header">Formulario de Calculo de Iva de Productos con descuento</div>
+                    <div class="card-body">
+                        <form name="calculaIva">
+                            <h5 class="card-title">Ingrese valores a calcular</h5>
+                            <div class="alert alert-danger" style="display: none" id="danger"></div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="producto">Nombre Producto</label>
+                                    <input type="text" class="form-control" id="producto" onkeypress="return alfanumericoSpace(event)">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input type="text" class="form-control text-center" maxlength="4" onkeypress="return soloNumeros(event)" id="cantidad">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="precio">Precio Unidad</label>
+                                    <input type="text" class="form-control text-center" maxlength="11" onkeypress="return soloNumeros(event)" id="precio">
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="descuento">Descuento %</label>
+                                    <input type="text" class="form-control text-center" placeholder="%" maxlength="2" onkeypress="return soloNumeros(event)" id="descuento">
+                                </div>
+                            </div>                            
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h5 class="card-title">Valores Resultantes</h5>    
+                                </div>
+                                <div class="col-lg-2">
+                                    Neto: <div class="result" id="neto">$</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    IVA: <div class="result" id="iva">$</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    Total: <div class="result" id="total">$</div>
+                                </div>
+                                <div class="col-lg-6 text-right">
+                                    <a class="btn btn-success" href="javascript:calculaIva()">Calcular</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                    
+                </div> 
+            </div>
+
+
+            <!-- Convercion EURO -->
+            <div class="row">
+                <div class="card bg-light col-md-offset-5 mb-3" style="margin: 0 auto;width: 900px;" id="conversionED">
+                    <div class="card-header">Tranformar valores de monedas Euros y Dolares a Pesos Chilenos</div>
+                    <div class="card-body">
+                        <form name="conversionED">
+                            <h5 class="card-title">Ingrese valores a calcular</h5>
+                            <div class="alert alert-danger" style="display: none" id="danger1"></div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4 form-group">
+                                    <label for="moneda">Moneda</label>
+                                    <select id="moneda" class="form-control">
+                                        <option value="1">Dolar</option>
+                                        <option value="2">Euro</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-2 form-group text-center">
+                                    <label for="cantMoneda">Cantidad</label>
+                                    <input type="text" class="form-control text-center" maxlength="11" onkeypress="return soloNumeros(event)" id="cantMoneda">
+                                </div>                                                       
+                                <div class="col-xs-12 col-md-2 form-group">
+                                    <a class="btn btn-info" style="margin-top: 31px;" href="javascript:convertir()">Convertir</a>
+                                </div>
+                                <div class="col-xs-12 col-md-4 form-group text-center" id="transfMoneda"></div>   
+                            </div>  
+                        </form>
+                    </div>                    
+                </div> 
+            </div>
+
+            <!-- Envio de Email -->
+            <div class="row">
+                <div class="card bg-light col-md-offset-5 mb-3" style="margin: 0 auto;width: 900px;" id="envioEmail">
+                    <div class="card-header">Formulario de envio de mail</div>
+                    <div class="card-body">
+                        <form name="envioEmail">
+                            <h5 class="card-title">Ingrese valores Solicitados</h5>
+                            <div class="alert alert-danger" style="display: none" id="danger2"></div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="nombreX">Nombre</label>
+                                    <input type="text" class="form-control" autocomplete="off" onkeyup="validaEnvio()" maxlength="500" onkeypress="return soloLetras(event)" id="nombreX">
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="rutX">Rut</label>
+                                    <input type="hidden" id="rutNoVal">
+                                    <input type="text" class="form-control" autocomplete="off" maxlength="12" onkeypress="return NumGuion(event)" id="rutX">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="emailX">E-Mail</label>
+                                    <input type="text" class="form-control" autocomplete="off" onkeyup="validaEnvio()" style="text-transform: none" maxlength="500" onkeypress="return soloEmail(event)" id="emailX">
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="fonoX">Telefono</label>
+                                    <input type="text" class="form-control" autocomplete="off" onkeyup="validaEnvio()" maxlength="10" onkeypress="return soloNumeros(event)" id="fonoX">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12 form-group">
+                                    <label for="texto">Mensaje</label>
+                                    <textarea class="form-control" maxlength="200" onkeyup="validaEnvio()" onkeypress="return alfanumericoSpace(event)" id="texto"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12 text-right form-group">
+                                    <button class="btn btn-danger" onclick="limpiar()">Limpiar</button>
+                                    <button class="btn btn-success" id="btEnv" disabled onclick="enviar()">Enviar</button>
+                                </div>
+                            </div>  
+                        </form>
+                    </div> 
+                    <div class="modal" id="msj" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Mensaje</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Email enviado correctamente</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+    </body>
+
+</html>

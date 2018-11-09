@@ -1,0 +1,137 @@
+*{
+    font-family:sans-serif;
+    margin: 0;
+}
+body{
+    background: #d0e4eb;
+}
+
+header{
+    width: 655px;
+    height: 150px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+nav{
+    width: 655px;
+    height: 40px;
+    background: #6ab4cf;
+    margin: 0 auto;
+}
+.tittleNav{
+    float: left;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 35px;
+}
+.iconsNav{
+    float: right;
+    color: #fff;
+    padding: 8px 10px;
+}
+.iconsNav div{
+    display: inline-block;
+    color: #6ab4cf;
+    background: #fff;
+    border-radius: 100%;
+    width: 25px;
+    height: 22px;
+    text-align: center;
+    padding-top:3px;
+    font-weight: bold;
+}
+section{
+    width: 655px;
+    height: 245px;
+    background: #fff;
+    margin: 0 auto;
+}
+section article{
+    width: 43.3%;
+}
+.newPrinc{
+    width: 655px;
+    height: 200px;
+    background: #fff;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.newPrinc article{
+    width: auto;
+}
+.newPrinc button{
+    float: right;
+}
+article{
+    padding: 20px;
+    color: #4a4a4a;
+    display: inline-block;
+}
+article h1{
+    color: #ee515c;
+    border-bottom: 1px solid #6ab4cf;
+    margin-bottom: 10px;
+}
+article h4{
+    color: #ee515c;
+    border-bottom: 1px solid #6ab4cf;
+    margin-bottom: 10px;
+}
+button{
+    background: #f15058;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    font-weight: bold;
+}
+article button{
+    margin-top: 20px;
+}
+.contacto{
+    width: 655px;
+    height: 100px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+}
+.contacto button{
+    margin-top: 29px;
+    background:#40839e;
+    font-size: 12px;
+}
+.contacto div{
+    background-image: url('hand.png');
+    width: 42px;
+    height: 34px;
+    position: absolute;
+    margin-left: 507px;
+    margin-top: -23px;
+}
+.tittle{
+    width: 655px;
+    height: 40px;
+    background: #6ab4cf;
+    margin: 0 auto;
+}
+
+footer{
+    width: 655px;
+    height: 150px;
+    background: #364b60;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 13px;
+}
+
+footer div{
+    display: inline-block;
+    width: 43.3%;
+    margin: 20px;
+    margin-top: 40px;
+    vertical-align: top;
+}
+footer button{
+    width: 100%;
+}
