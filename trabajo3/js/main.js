@@ -77,7 +77,6 @@ function closePosicion() {
 
 
 var map;
-//var infowindow;
 function initPla() {
 
 }
