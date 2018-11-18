@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-nov-2018, 19:54:10
+    Author     : esteb
+*/
+
+#myUbic{
+    display: none;
+    padding-top: 0;
+}
+
+.alertTo{
+    background: #f44336;
+    border-radius: 10px;
+}

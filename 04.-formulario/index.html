@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/global.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery.Rut.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="contenedor-form">
+
+            <p class="rut">
+                <input type="text" class="input" placeholder="Rut" id="rut" name="rut" onblur="revisar(this);revisaNumero(this)" onkeypress="return NumGuion(event);" onkeyup="revisar(this); revisaNumero(this)" autocomplete="off" required>
+            </p>
+
+            <p class="nombre">
+                <input type="text" class="input" placeholder="Nombre" id="nombre" onkeypress="return soloLetras(event);" name="nombre" onblur="revisar(this)" 
+                       onkeyup="revisar(this)" autocomplete="off" required>
+            </p>
+
+            <p class="email">
+                <input type="text" class="input" placeholder="Email" id="email" onkeypress="return soloEmail(event);" name="email" onblur="revisar(this);
+                        revisarEmail(this)" onkeyup="revisar(this);
+                                revisarEmail(this)" autocomplete="off" required>
+            </p>
+
+            <p class="telefono">
+                <input type="text" class="input" placeholder="Telefono" maxlength="9" id="telefono" onkeypress="return soloNumeros(event);" name="telefono" 
+                       onblur="revisar(this); revisaNumero(this)" onkeyup="revisar(this);
+                               revisaNumero(this)" 
+                       autocomplete="off" required>
+            </p>
+
+            <p class="ciudad">
+                <input type="text" class="input" placeholder="Ciudad" id="ciudad" name="ciudad" onkeypress="return soloLetras(event);" onblur="revisar(this)" 
+                       onkeyup="revisar(this)" autocomplete="off" required>
+            </p>
+
+            <p class="direccion">
+                <input type="text" class="input" placeholder="Dirección" onkeypress="return soloDireccion(event);" id="direccion" name="direccion" 
+                       onblur="revisar(this)" onkeyup="revisar(this)" autocomplete="off" required>
+            </p>
+
+            <p class="pass">
+                <input type="password" class="input" placeholder="Contraseña" id="pass" name="pass" 
+                       onblur="revisarcomp(this)" onkeyup="revisarcomp(this)" autocomplete="off" required>
+            </p>
+
+            <p class="pass2">
+                <input type="password" class="input" placeholder="Repetir Contraseña" id="pass2" name="pass2" 
+                       onblur="revisarcomp(this)" onkeyup="revisarcomp(this)" autocomplete="off" required>
+            </p>
+
+            <br>
+            <a class="btn btn-success" href="#" onclick="findMe()">Mostrar ubicación</a>
+            <div id="map"></div>
+
+
+            <div class="enviar">
+                <a href="#" onclick="envia()" class="btn btn-info">Enviar</a>                    
+            </div>
+
+        </div>
+    </body>
+</html>
