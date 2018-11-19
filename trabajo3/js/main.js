@@ -82,10 +82,12 @@ function initPla() {
 }
 function initPlaces() {
     var busqueda = $('#busqueda').val();
+
     if (busqueda == '') {
         M.toast({html: 'Debe ingresar valores a la busqueda', classes: 'alertTo'});
         return false;
     }
+    $('.progress').show();
     $('#cardResult').show('fast');
 //Limpia busqueda
     $('#resultados').html('');
@@ -129,6 +131,7 @@ function callback(results, status) {
         $('#resultMapa').hide('fast');
         $('#resultados').append('<tr><td colspan="2">No se han encontrado resultados</td></tr>');
     }
+    $('.progress').hide();
 }
 
 function createMarker(place) {
@@ -137,9 +140,11 @@ function createMarker(place) {
     var vicinity = place.formatted_address;
     var lats = place.geometry.location;
 
+    $('.tooltipped').tooltip();
+
     var html = '<tr>';
     html += '<td><strong id="name_' + id + '">' + placeLoc + '</strong><br><font style="font-size: 12px;" id="add_' + id + '">' + vicinity + '</font></td>';
-    html += '<td><a class="orange-text" href="javascript:openMap(\'' + lats + '\',\'' + id + '\')"><i class="fa fa-map-o"><i></a></td>';
+    html += '<td><a class="orange-text tooltipped" data-position="left" data-tooltip="Ver Ubicación" href="javascript:openMap(\'' + lats + '\',\'' + id + '\')"><i class="fa fa-map-o"><i></a></td>';
     html += '</tr>';
     $('#resultados').append(html);
 
@@ -180,7 +185,7 @@ function cargarPosicionDetalle(location, id) {
 
     var marker = new google.maps.Marker({
         map: map,
-        draggable: true,
+        draggable: false,
         animation: google.maps.Animation.DROP,
         position: new google.maps.LatLng(lat, lng)
     });
